@@ -16,7 +16,7 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 
 const FormSchema = z.object({
-  prompt: z.string().max(200, {
+  content: z.string().max(200, {
     message: "Prompt must not exceed 200 char.",
   }),
 });
@@ -28,14 +28,13 @@ export function ChatForm() {
 
   async function onSubmit(data: z.infer<typeof FormSchema>) {
     try {
+      console.log("WEB Received prompt:", data);
       const response = await fetch("http://127.0.0.1:3000/api/prompts", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          data,
-        }),
+        body: JSON.stringify(data),
       });
       if (!response.ok) {
         throw new Error(`Response status: ${response.status}`);
@@ -64,7 +63,7 @@ export function ChatForm() {
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
         <FormField
           control={form.control}
-          name="prompt"
+          name="content"
           render={({ field }) => (
             <FormItem>
               <FormControl>

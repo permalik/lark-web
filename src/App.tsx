@@ -12,8 +12,8 @@ import { Link } from "@radix-ui/react-navigation-menu";
 function App() {
   return (
     <>
-      <header className="mx-3.5 mb-16 flex items-center justify-between">
-        <a href="/" className="font-semibold">
+      <header className="mx-3.5 mb-16 pt-3 flex items-center justify-between">
+        <a href="/" className="px-4 py-2 rounded-md font-semibold">
           Lark
         </a>
         <NavigationMenu>
