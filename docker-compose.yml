@@ -1,0 +1,11 @@
+services:
+  lark-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: lark_web
+    ports:
+      - "5173:5173"
+    environment:
+      NODE_ENV: production
+    command: ["serve", "-s", "dist", "-l", "5173"]

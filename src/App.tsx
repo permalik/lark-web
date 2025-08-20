@@ -3,7 +3,6 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { ChatForm } from "./components/ui/chat/chat";
 import "./styles/main.css";
@@ -19,18 +18,12 @@ function App() {
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <NavigationMenuLink
-                asChild
-                className={navigationMenuTriggerStyle()}
-              >
+              <NavigationMenuLink asChild>
                 <Link href="/">Dashboard</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink
-                asChild
-                className={navigationMenuTriggerStyle()}
-              >
+              <NavigationMenuLink asChild>
                 <Link href="/">Chat</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
