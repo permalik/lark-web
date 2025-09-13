@@ -28,7 +28,8 @@ export function ChatForm() {
   async function onSubmit(data: z.infer<typeof FormSchema>) {
     try {
       console.log("Prompt:", data);
-      const response = await fetch("http://127.0.0.1:4444/prompt", {
+      // TODO: impl local
+      const response = await fetch("http://104.236.245.18:4444/prompt", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
